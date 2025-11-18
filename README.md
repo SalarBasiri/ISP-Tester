@@ -48,7 +48,7 @@ To test the included sample list:
 
 In the PowerShell window, type the following and press Enter:
 
-.\Analyze-Accessibility.ps1 sample_urls.txt
+.\Analyze-Accessibility.ps1 url1000.txt
 
 The script will launch a dashboard showing which sites are ACCESSIBLE (Green) and which are BLOCKED (Red).
 
@@ -80,6 +80,8 @@ Run the Analysis on the New List:
 
 .\Analyze-Accessibility.ps1 urls2.txt
 
+The file url.ir.txt contains top .ir website extracted from 1 million mostly visited website on 9 September 2025 from "Cisco Umbrella" CSV list.
+
 📊 Interpreting Results
 
 ACCESSIBLE (Code 200-399): The website loaded successfully.
@@ -100,5 +102,6 @@ This project is open source and available under the MIT License. You are free to
 
 ⚠️ Disclaimer
 This tool is for educational and diagnostic purposes. Please respect the Terms of Service of the websites you are testing.
+
 
 
