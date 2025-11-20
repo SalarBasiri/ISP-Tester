@@ -25,26 +25,19 @@ Download this repository as a ZIP file (Click the green Code button -> Download 
 
 Extract the ZIP file to a folder on your computer (e.g., C:\InternetTest).
 
-Step 1: Allow Scripts to Run
+Step 1: Allow Scripts and Run the Accessibility Test
 
 By default, Windows prevents scripts from running for security. You need to allow it temporarily.
 
+Run PowerShell as administrator, type Powershel in search, rightclick on it and select Run as Administrator.
 
-Open the folder where you extracted the files.
+Go to extracted folder (e.g., cd C:\InternetTest)
 
-Right-click inside the folder window (in a blank space) and select "Open in Terminal" or "Open PowerShell window here".
-
-If you get a "SecurityError", run this command in the PowerShell window:
-
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+PowerShell -> Set-ExecutionPolicy RemoteSigned
 
 (Type Y and press Enter if asked to confirm. This allows scripts to run only in this specific window).
 
-
-Step 2: Run the Accessibility Test
-
 To test the included sample list:
-
 
 In the PowerShell window, type the following and press Enter:
 
@@ -54,10 +47,13 @@ The script will launch a dashboard showing which sites are ACCESSIBLE (Green) an
 
 When finished, the results are saved to Detailed_Accessibility_Log.csv in the folder.
 
-Step 3: Advanced - Testing Specific Regions (TLDs)
+Finally, in the PowerShell window, type the following to return default windows setting:
+Set-ExecutionPolicy Restricted
+
+
+Step 2: Advanced - Testing Specific Regions (TLDs)
 
 If you want to test a massive list (e.g., the top 1 million websites) but only check specific domains (like sites ending in .ir or .cn), follow these steps:
-
 
 Get a Source List: Download the "Majestic Million" or "Cisco Umbrella" CSV list (search for them online, they are free). Rename it to million_urls.txt and place it in the script folder.
 
@@ -74,7 +70,6 @@ Run the Filter:
 .\Filter-TLD.ps1
 
 This will create a new file named urls2.txt containing only the domains you wanted.
-
 
 Run the Analysis on the New List:
 
@@ -102,6 +97,7 @@ This project is open source and available under the MIT License. You are free to
 
 ⚠️ Disclaimer
 This tool is for educational and diagnostic purposes. Please respect the Terms of Service of the websites you are testing.
+
 
 
 
